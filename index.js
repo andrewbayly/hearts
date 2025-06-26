@@ -24,7 +24,7 @@ var DEALS_PER_GAME = 4;
 var SHOOT_THE_MOON = 139;
 
 // Serve static files from the 'assets' directory:
-const assetsPath = path.join(__dirname, '..', 'assets')
+const assetsPath = path.join(__dirname, 'assets')
 console.log('Serving static files from:', assetsPath);
 
 // Test if the directory exists
