@@ -1,6 +1,8 @@
         
 var app = require("express")();      
 var _http = require("http"); 
+const path = require('path');
+
 var http = _http.createServer(app);
 var io = require("socket.io")(http, {
   pingInterval: 5000000,
@@ -17,9 +19,12 @@ var TRICKS_PER_HAND = 13;
 var DEALS_PER_GAME = 4;
 var SHOOT_THE_MOON = 139;
 
-app.get("/cards/*", function(req, res) {
-  res.sendFile(__dirname + req.url);
-});
+// Serve static files from the 'assets' directory:
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
+//app.get("/cards/*", function(req, res) {
+//  res.sendFile(__dirname + req.url);
+//});
 
 app.get("/", (req, res) => {
   //console.log("" + new Date() + " sending index.html");
