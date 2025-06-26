@@ -21,7 +21,7 @@ var DEALS_PER_GAME = 4;
 var SHOOT_THE_MOON = 139;
 
 // Serve static files from the 'assets' directory:
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/assets', express.static(path.join(__dirname, '..', 'assets')));
 
 //app.get("/cards/*", function(req, res) {
 //  res.sendFile(__dirname + req.url);
