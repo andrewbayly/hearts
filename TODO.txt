@@ -1,0 +1,93 @@
+========================================================================================================================
+TODO  
+========================================================================================================================
+12. rooms/lobby
+
+========================================================================================================================
+DOING
+========================================================================================================================
+9. adapt shoot the moon so that you have a choice
+      - server side - DONE
+      - basic JavaScript Alert Box - DONE
+      - fancy JQuery Dialog Box 
+
+
+
+========================================================================================================================
+DONE
+========================================================================================================================
+0. move to glitch to make it easier to share - DONE
+1. hearts have been broken message when someone plays a heart - DONE
+      - add heartsPlayed property to table - DONE
+      - check for heart played and increment heartsPlayed - DONE
+      - check if heartsPlayed is 1, and send message to chat - DONE
+        from heartsbot that "hearts have been broken"
+2. start over button - DONE
+   - add start over button on front-end - DONE
+   - add message to back-end that we want to startover - DONE
+   - add handler on back-end (startover) - DONE
+      - call table init 
+      - call report
+3. how did natalie manage to break the pick up??? - DONE
+   - if you pass 4 cards by mistake, then you can still pick up your three passed cards - DONE 
+   - disallow playing more than one card - DONE 
+   - allow player to unplay their played card ( back into their hand )
+       - add unplay handler onto played card - DONE
+       - implement unplay - DONE
+       - if unplayed card is a heart, then adjust heartsPlayed, and check if hearts have been broken - DONE
+4. make the leader a different color. - DONE
+   - server 
+     - add leader property to table - DONE
+     - reset leader to -1 in initTable - DONE
+     - on play, check if we are the leader and if so set leader. - DONE
+     - on unplay, check if we were the leader and if so reset leader - DONE
+     - on takeTrick, reset the leader to -1 - DONE
+     - in report, set leader in data object - DONE
+   - client
+      - add check in update to set leader to red - DONE 
+5. print out a msg that says who took the trick. - DONE  
+6. only allow a trick to be taken if there are 4 played cards - DONE    
+7. deal not allowed if there are cards in anyone's hand, or on the table - DONE
+8. shuffle sound... - DONE
+    - create the shuffle sound & upload to the server - DONE
+    - play the sound when you hit the deal button - DONE
+    - client clicks button & sends deal message - DONE
+    - server checks if deals is OK - if not then return - DONE
+    - if OK, then shuffle and report, noting shuffle = true - DONE
+    - client receives report message and notes shufle - DONE
+    -   plays shuffle sound
+    -   waits
+    -   displays cards
+
+10. make the cards slightly bigger 20% bigger - DONE 
+11. hearts have been broken sound --> tested by setting up 4 players and breaking the hearts, noise worked!
+13. force the scroll window to the bottom so you can see the last message.  --> tested by adding to the chat box repeatedly and auto scroll worked!
+**. When passing, if a player has passed their 3 cards, and 2 cards have been passed to them, then can accept those
+    two cards. Then when a third card is passed to them and they can't accept it - that card remains in limbo. 
+**. Sort the Total Scores in order of decreasing score - DONE
+**. Add a border. - WIP
+========================================================================================================================
+
+Updates:  
+  - refresh browser is OK - you won't get booted from the game. - DONE 
+  - 4 deals per game - DONE
+  - report total scores and winner(s) - DONE
+  - passing - DONE
+  - basic shoot-the-moon - DONE
+ 
+Next Steps: 
+  - keep alive - DONE
+
+  - check for shoot-the-moon and update scores accordingly 
+     - check for 139 and set score to zero - DONE
+     - ask player which option they want.
+
+  - passing! - DONE
+      - setup passingTo data structure - DONE
+      - change deal so that we we set passingTo - DONE
+      - add passed[p] data structure - DONE
+      - change play - if passingTo[p].cards > 0 then pass. - DONE
+      - change report to pass back passed to client (check for backs) - DONE
+      - change front-end to display passed cards.- DONE
+      - add accept method in front end which accepts cards - DONE
+      - add accept method in back-end which accepts cards - DONE
