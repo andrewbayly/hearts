@@ -122,7 +122,7 @@
           $("#messages").append($("<li>").text(msg));
           document.getElementById("messages").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
           if (msg.includes("broken")) {
-              var hearts_broken = new Audio('https://cdn.glitch.com/b054eae9-1b6d-44bf-9acd-71938f6abce0%2FTrain_Honk_Horn_Clear-Mike_Koenig-1632487478.mp3?v=1591385849402.mp3');
+              var hearts_broken = new Audio('assets/Train_Honk_Horn_Clear.mp3');
               hearts_broken.play();
           } 
         });
