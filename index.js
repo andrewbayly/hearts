@@ -3,9 +3,9 @@ const express = require("express")
 const app = express();      
 var _http = require("http"); 
 const path = require('path');
-const fs = require('fs');
+//const fs = require('fs');
 
-console.log('__dirname:', __dirname);
+//console.log('__dirname:', __dirname);
 
 var http = _http.createServer(app);
 var io = require("socket.io")(http, {
@@ -25,26 +25,6 @@ var SHOOT_THE_MOON = 139;
 
 // Serve static files from the 'assets' directory:
 const assetsPath = path.join(__dirname, 'assets')
-console.log('Serving static files from:', assetsPath);
-
-// Test if the directory exists
-fs.access(assetsPath, fs.constants.F_OK, (err) => {
-  if (err) {
-    console.error(`Error: The assets directory "${assetsPath}" does not exist or is not accessible.`);
-  } else {
-    console.log(`Success: The assets directory "${assetsPath}" exists and is accessible.`);
-
-    // Now, test if a specific image file exists
-    const imagePath = path.join(assetsPath, 'cards', '2s.png');
-    fs.access(imagePath, fs.constants.F_OK, (imgErr) => {
-      if (imgErr) {
-        console.error(`Error: The image file "${imagePath}" does not exist or is not accessible.`);
-      } else {
-        console.log(`Success: The image file "${imagePath}" exists and is accessible.`);
-      }
-    });
-  }
-});
 
 app.use('/assets', express.static(assetsPath));
 
